@@ -1,0 +1,32 @@
+{
+  "name": "BackOrderHistory",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "@sap/cds-dk": "^10",
+    "@cap-js/cds-test": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "test": "node --test"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": "mocked"
+      },
+      "[production]": {
+        "auth": "mocked"
+      }
+    },
+    "server": {
+      "index": true
+    }
+  }
+}

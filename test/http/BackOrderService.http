@@ -1,0 +1,90 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### BackOrderItems
+# @name BackOrderItems_GET
+GET {{server}}/odata/v4/back-order/BackOrderItems
+Authorization: Basic {{username}}:{{password}}
+
+
+### BackOrderItems
+# @name BackOrderItems_POST
+POST {{server}}/odata/v4/back-order/BackOrderItems
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 12400079,
+  "soldTo": "soldTo-12400079",
+  "shipTo": "shipTo-12400079",
+  "productCode": "productCode-12400079",
+  "quantity": 79,
+  "currency": "079",
+  "dealerPrice": 5.49,
+  "totalPrice": 2.55,
+  "erpOrderNumber": "OrderNumber-12400079",
+  "orderDate": "2020-05-23T00:00:00.000Z",
+  "orderStatus": "00079",
+  "invoiceNumber": 82,
+  "poNumber": 5
+}
+
+
+### BackOrderItems
+# @name BackOrderItems_PATCH
+PATCH {{server}}/odata/v4/back-order/BackOrderItems/12400079
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 12400079,
+  "soldTo": "soldTo-12400079",
+  "shipTo": "shipTo-12400079",
+  "productCode": "productCode-12400079",
+  "quantity": 79,
+  "currency": "079",
+  "dealerPrice": 5.49,
+  "totalPrice": 2.55,
+  "erpOrderNumber": "OrderNumber-12400079",
+  "orderDate": "2020-05-23T00:00:00.000Z",
+  "orderStatus": "00079",
+  "invoiceNumber": 82,
+  "poNumber": 5
+}
+
+
+### BackOrderItems
+# @name BackOrderItems_DELETE
+DELETE {{server}}/odata/v4/back-order/BackOrderItems/12400079
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### getBackOrderItems
+# @name getBackOrderItems_POST
+POST {{server}}/odata/v4/back-order/getBackOrderItems
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "request": {
+    "soldTo": "12345678",
+    "shipTo": [
+      "123456",
+      "234564"
+    ],
+    "search": "00000873",
+    "searchBy": "orderNumber",
+    "fromDate": "2021-03-08T23:00:00Z",
+    "toDate": "2021-05-09T23:00:00Z",
+    "status": [],
+    "sort": "dateOrder",
+    "dir": "asc",
+    "sort": "orderDate",
+    "dir": "asc",
+    "currentPage": 0,
+    "pageSize": 12
+  }
+}
